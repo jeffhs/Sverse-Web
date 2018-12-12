@@ -84,6 +84,7 @@ endpoints:
 
 ---
 hibernate:
+    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     cache:
         queries: false
         use_second_level_cache: false
@@ -91,15 +92,15 @@ hibernate:
 dataSource:
     pooled: true
     jmxExport: true
-    driverClassName: org.h2.Driver
-    username: sa
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
     password: ''
 
 environments:
     development:
         dataSource:
             dbCreate: create-drop
-            url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            url: jdbc:mysql://localhost:3306/defaultbd
     test:
         dataSource:
             dbCreate: update

@@ -12,7 +12,11 @@
         <div class="column col-12">
             <div class="accordion">
                 <input id="accordion-1" type="radio" name="accordion-radio" hidden="" checked="">
-                <label class="accordion-header c-hand" for="accordion-1"><i class="icon icon-link mr-1"></i><h3>Elements</h3></label>
+                <label class="accordion-header c-hand" for="accordion-1"><i class="icon icon-link mr-1"></i>
+                    <h3>
+                        <g:message code="default.message.welcome"/>
+                    </h3>
+                </label>
                 <div class="accordion-body">
                     <ul class="menu menu-nav">
                         <li class="menu-item"><a href="#accordions">Element 1</a></li>

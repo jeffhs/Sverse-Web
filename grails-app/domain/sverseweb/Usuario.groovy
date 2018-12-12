@@ -3,13 +3,18 @@ package sverseweb
 class Usuario {
 
     String nome
-    Integer numeroDaImagem
+    String login
+    String senha
+    String permissao
     String tipo
-    Integer numeroDeNotificacoes
+    Integer nNotificacoes
 
     static constraints = {
-        nome(nullable: false, blank: false,        maxSize: 100, unique:true)
-        numeroDaImagem(nullable: false, blank: false,        maxSize: 100, unique:true)
-        tipo(nullable: false, blank: false,        maxoSize: 100, unique:true)
+        nome(nullable: false, blank: false,        maxSize: 100, unique:false)
+        login(nullable: false, blank: false,        maxSize: 100, unique:false)
+        senha(nullable: false, blank: false,        maxSize: 100, unique:false)
+        permissao(nullable: false, blank: false,        maxSize: 100, unique:false)
+        tipo(nullable: false, blank: false,        maxSize: 100, unique:false)
+        nNotificacoes(nullable: false, blank: false,        maxSize: 100, unique:false)
     }
 }

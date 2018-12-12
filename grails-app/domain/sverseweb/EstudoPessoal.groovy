@@ -1,6 +1,6 @@
 package sverseweb
 
-class EstudoPessoal {
+class EstudoPessoal extends Container{
 
     static constraints = {
     }
