@@ -37,7 +37,7 @@ class TopicoDeEstudoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'topicoDeEstudo.label', default: 'TopicoDeEstudo'), topicoDeEstudo.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'topicoDeEstudo.label', default: 'TopicoDeEstudo'), topicoDeEstudo.id])
                 redirect topicoDeEstudo
             }
             '*' { respond topicoDeEstudo, [status: CREATED] }
@@ -63,7 +63,7 @@ class TopicoDeEstudoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'topicoDeEstudo.label', default: 'TopicoDeEstudo'), topicoDeEstudo.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'topicoDeEstudo.label', default: 'TopicoDeEstudo'), topicoDeEstudo.id])
                 redirect topicoDeEstudo
             }
             '*'{ respond topicoDeEstudo, [status: OK] }
@@ -80,7 +80,7 @@ class TopicoDeEstudoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'topicoDeEstudo.label', default: 'TopicoDeEstudo'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'topicoDeEstudo.label', default: 'TopicoDeEstudo'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class TopicoDeEstudoController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'topicoDeEstudo.label', default: 'TopicoDeEstudo'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'topicoDeEstudo.label', default: 'TopicoDeEstudo'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

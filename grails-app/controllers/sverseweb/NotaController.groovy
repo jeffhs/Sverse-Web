@@ -1,99 +1,61 @@
 package sverseweb
 
 import grails.validation.ValidationException
+import seguranca.Usuario
+
 import static org.springframework.http.HttpStatus.*
 
 class NotaController {
 
     NotaService notaService
+    def springSecurityService;
+
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond notaService.list(params), model:[notaCount: notaService.count()]
+    def getCurrentUser(){
+        Usuario usuario = springSecurityService.getCurrentUser();
+        return usuario;
     }
 
-    def show(Long id) {
-        respond notaService.get(id)
+    def index(){
+        Usuario user = springSecurityService.getCurrentUser();
+        def lista = user.notas.asList()
+        lista.sort{it.id}
+        render(view: "/nota/index", model: [usuario: getCurrentUser(), notas:lista])
     }
 
-    def create() {
-        respond new Nota(params)
+    def newNota(){
+        Usuario user = springSecurityService.getCurrentUser();
+        Nota nota = new Nota()
+        nota.texto = params.texto
+        nota.setDataCriacao(new Date())
+        nota.setDataAtualizacao(new Date())
+        nota.setUsuario(user)
+        notaService.save(nota)
+        redirect(view: "index")
     }
 
-    def save(Nota nota) {
-        if (nota == null) {
-            notFound()
-            return
-        }
-
-        try {
-            notaService.save(nota)
-        } catch (ValidationException e) {
-            respond nota.errors, view:'create'
-            return
-        }
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'nota.label', default: 'Nota'), nota.id])
-                redirect nota
-            }
-            '*' { respond nota, [status: CREATED] }
-        }
+    def editNota(){
+        Usuario user = springSecurityService.getCurrentUser();
+        Nota nota = Nota.findById(params.idNotaEdit)
+        nota.texto = params.texto
+        nota.setDataAtualizacao(new Date())
+        nota.setUsuario(user)
+        notaService.save(nota)
+        redirect(view: "index")
     }
 
-    def edit(Long id) {
-        respond notaService.get(id)
+    def edit(int id){
+        Usuario user = springSecurityService.getCurrentUser();
+        def lista = user.notas.asList()
+        lista.sort{it.id}
+        Nota nota = Nota.findById(id)
+        render(view: "/nota/edit", model: [usuario: getCurrentUser(), notas:lista, nota: nota])
     }
 
-    def update(Nota nota) {
-        if (nota == null) {
-            notFound()
-            return
-        }
-
-        try {
-            notaService.save(nota)
-        } catch (ValidationException e) {
-            respond nota.errors, view:'edit'
-            return
-        }
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'nota.label', default: 'Nota'), nota.id])
-                redirect nota
-            }
-            '*'{ respond nota, [status: OK] }
-        }
-    }
-
-    def delete(Long id) {
-        if (id == null) {
-            notFound()
-            return
-        }
-
-        notaService.delete(id)
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'nota.label', default: 'Nota'), id])
-                redirect action:"index", method:"GET"
-            }
-            '*'{ render status: NO_CONTENT }
-        }
-    }
-
-    protected void notFound() {
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'nota.label', default: 'Nota'), params.id])
-                redirect action: "index", method: "GET"
-            }
-            '*'{ render status: NOT_FOUND }
-        }
+    def excluirNota(){
+        notaService.delete(params.idNotaEdit)
+        redirect(action: "index")
     }
 }

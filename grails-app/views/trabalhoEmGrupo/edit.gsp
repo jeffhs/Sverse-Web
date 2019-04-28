@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'trabalhoEmGrupo.label', default: 'TrabalhoEmGrupo')}" />
-        <title><g:message code="default.edit.label" args="[entityName]" /></title>
-    </head>
-    <body>
-        <a href="#edit-trabalhoEmGrupo" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-            </ul>
+<head>
+    <g:set var="entityName" value="${message(code: 'trabalhoEmGrupo.label', default: 'TrabalhoEmGrupo')}"/>
+    <title><g:message code="default.list.label" args="[entityName]"/></title>
+
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'itens-in-grid-container.css')}" type="text/css">
+    <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/desktop-style.css?v=266bb8a6f649">
+    <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/misc-desktop-style.css?v=84527a92ab6d">
+    <asset:link rel="icon" href="faviconSverse.ico" type="image/x-ico"/>
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="columns">
+        <div class="column col-12">
+            <header class="global-header contentNavGlobal">
+                <div class="content community-bg">
+                    <div class="container">
+                        <g:render template="../templates/_navGlobal"/>
+                    </div>
+                </div>
+            </header>
+            <g:render template="../templates/_navHome"/>
+            <div style="text-align: center;">
+
+                <g:render template="mainPageEditTrabalhos"/>
+
+            </div>
         </div>
-        <div id="edit-trabalhoEmGrupo" class="content scaffold-edit" role="main">
-            <h1><g:message code="default.edit.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
-            <div class="message" role="status">${flash.message}</div>
-            </g:if>
-            <g:hasErrors bean="${this.trabalhoEmGrupo}">
-            <ul class="errors" role="alert">
-                <g:eachError bean="${this.trabalhoEmGrupo}" var="error">
-                <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-                </g:eachError>
-            </ul>
-            </g:hasErrors>
-            <g:form resource="${this.trabalhoEmGrupo}" method="PUT">
-                <g:hiddenField name="version" value="${this.trabalhoEmGrupo?.version}" />
-                <fieldset class="form">
-                    <f:all bean="trabalhoEmGrupo"/>
-                </fieldset>
-                <fieldset class="buttons">
-                    <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-                </fieldset>
-            </g:form>
-        </div>
-    </body>
+    </div>
+</div>
+</body>
 </html>

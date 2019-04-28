@@ -37,7 +37,7 @@ class GrupoDeEstudoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'grupoDeEstudo.label', default: 'GrupoDeEstudo'), grupoDeEstudo.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'grupoDeEstudo.label', default: 'GrupoDeEstudo'), grupoDeEstudo.id])
                 redirect grupoDeEstudo
             }
             '*' { respond grupoDeEstudo, [status: CREATED] }
@@ -63,7 +63,7 @@ class GrupoDeEstudoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'grupoDeEstudo.label', default: 'GrupoDeEstudo'), grupoDeEstudo.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'grupoDeEstudo.label', default: 'GrupoDeEstudo'), grupoDeEstudo.id])
                 redirect grupoDeEstudo
             }
             '*'{ respond grupoDeEstudo, [status: OK] }
@@ -80,7 +80,7 @@ class GrupoDeEstudoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'grupoDeEstudo.label', default: 'GrupoDeEstudo'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'grupoDeEstudo.label', default: 'GrupoDeEstudo'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class GrupoDeEstudoController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'grupoDeEstudo.label', default: 'GrupoDeEstudo'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'grupoDeEstudo.label', default: 'GrupoDeEstudo'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

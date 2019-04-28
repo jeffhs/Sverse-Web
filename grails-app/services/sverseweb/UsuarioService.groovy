@@ -1,6 +1,7 @@
 package sverseweb
 
 import grails.gorm.services.Service
+import seguranca.Usuario
 
 @Service(Usuario)
 interface UsuarioService {
@@ -14,5 +15,4 @@ interface UsuarioService {
     void delete(Serializable id)
 
     Usuario save(Usuario usuario)
-
 }

@@ -1,0 +1,35 @@
+.nota{
+    margin: 12px;
+    height: 100%;
+    background-color: #74c6d4;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    font-size: 14pt;
+    padding: 10px;
+    font-weight: bold;
+    outline: none;
+    resize: none;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    transition: margin-left 100ms, margin-right 100ms, background-color 200ms;
+}
+
+.nota:hover{
+    margin-right: 11px;
+    margin-left: 11px;
+    background: #78dfa0;
+}
+
+.nota p{
+    color: #fff;
+    align-self: center;
+}
+
+
+
+
+
+

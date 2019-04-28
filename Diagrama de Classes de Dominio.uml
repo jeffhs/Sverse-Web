@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>sverseweb</OriginalElement>
+  <nodes>
+    <node x="1900.0" y="2502.0">sverseweb.Professor</node>
+    <node x="5800.0" y="0.0">sverseweb.TemaDeEstudo</node>
+    <node x="5850.0" y="4405.0">sverseweb.ItemEnvio</node>
+    <node x="7150.0" y="4405.0">sverseweb.Alarme</node>
+    <node x="2550.0" y="0.0">sverseweb.Estudo</node>
+    <node x="5200.0" y="4405.0">sverseweb.Notificacao</node>
+    <node x="6500.0" y="4405.0">sverseweb.ItemLixeira</node>
+    <node x="6450.0" y="0.0">sverseweb.TopicoDeEstudo</node>
+    <node x="5150.0" y="0.0">sverseweb.CicloDeEstudo</node>
+    <node x="0.0" y="6198.0">sverseweb.Paginador</node>
+    <node x="2600.0" y="4405.0">sverseweb.BoletimDeEstudo</node>
+    <node x="625.0" y="2623.0">sverseweb.GrupoDeEstudo</node>
+    <node x="4550.0" y="4405.0">sverseweb.Lixeira</node>
+    <node x="3200.0" y="0.0">sverseweb.Nota</node>
+    <node x="1250.0" y="2502.0">sverseweb.Materia</node>
+    <node x="3850.0" y="0.0">sverseweb.Perfil</node>
+    <node x="625.0" y="0.0">sverseweb.Container</node>
+    <node x="4500.0" y="0.0">sverseweb.TrabalhoEmGrupo</node>
+    <node x="0.0" y="4405.0">sverseweb.Meta</node>
+    <node x="3250.0" y="4405.0">sverseweb.BoletimDeEtapas</node>
+    <node x="1900.0" y="0.0">sverseweb.Usuario</node>
+    <node x="650.0" y="6198.0">sverseweb.ContainerPessoal</node>
+    <node x="1950.0" y="4405.0">sverseweb.Pomodoro</node>
+    <node x="650.0" y="4405.0">sverseweb.Envio</node>
+    <node x="0.0" y="2568.0">sverseweb.Turma</node>
+    <node x="1300.0" y="4405.0">sverseweb.Objetivo</node>
+    <node x="3900.0" y="4405.0">sverseweb.BoletimDeObjetivos</node>
+    <node x="7100.0" y="0.0">sverseweb.Etapa</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="sverseweb.Professor" target="sverseweb.Usuario">
+      <point x="0.0" y="-907.0" />
+      <point x="0.0" y="1226.0" />
+    </edge>
+    <edge source="sverseweb.Turma" target="sverseweb.Container">
+      <point x="0.0" y="-863.0" />
+      <point x="302.5" y="2477.0" />
+      <point x="725.8333333333334" y="2477.0" />
+      <point x="-201.66666666666663" y="1226.0" />
+    </edge>
+    <edge source="sverseweb.GrupoDeEstudo" target="sverseweb.Container">
+      <point x="0.0" y="-808.0" />
+      <point x="0.0" y="1226.0" />
+    </edge>
+    <edge source="sverseweb.Materia" target="sverseweb.Container">
+      <point x="0.0" y="-929.0" />
+      <point x="1552.5" y="2477.0" />
+      <point x="1129.1666666666665" y="2477.0" />
+      <point x="201.66666666666652" y="1226.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7245398773006134" x="1034.719298245614" y="457.5444538526673" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>Production</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

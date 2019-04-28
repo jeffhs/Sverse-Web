@@ -37,7 +37,7 @@ class NotificacaoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'notificacao.label', default: 'Notificacao'), notificacao.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'notificacao.label', default: 'Notificacao'), notificacao.id])
                 redirect notificacao
             }
             '*' { respond notificacao, [status: CREATED] }
@@ -63,7 +63,7 @@ class NotificacaoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'notificacao.label', default: 'Notificacao'), notificacao.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'notificacao.label', default: 'Notificacao'), notificacao.id])
                 redirect notificacao
             }
             '*'{ respond notificacao, [status: OK] }
@@ -80,7 +80,7 @@ class NotificacaoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'notificacao.label', default: 'Notificacao'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'notificacao.label', default: 'Notificacao'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class NotificacaoController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'notificacao.label', default: 'Notificacao'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'notificacao.label', default: 'Notificacao'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

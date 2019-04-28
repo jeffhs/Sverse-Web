@@ -4,6 +4,10 @@ class TopicoDeEstudo {
     String nome
     Date dataCriacao
     Date dataAtualizacao
+
+    static belongsTo = [temaDeEstudo : TemaDeEstudo]
+    static hasMany = [boletinsDeEstudo : BoletimDeEstudo]
+
     static constraints = {
         nome(nullable: false, blank: false,        maxSize: 100, unique:false)
         dataCriacao(nullable: false, blank: false,        maxSize: 100, unique:false)

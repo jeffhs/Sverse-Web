@@ -37,7 +37,7 @@ class ContainerPessoalController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'containerPessoal.label', default: 'ContainerPessoal'), containerPessoal.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'containerPessoal.label', default: 'ContainerPessoal'), containerPessoal.id])
                 redirect containerPessoal
             }
             '*' { respond containerPessoal, [status: CREATED] }
@@ -63,7 +63,7 @@ class ContainerPessoalController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'containerPessoal.label', default: 'ContainerPessoal'), containerPessoal.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'containerPessoal.label', default: 'ContainerPessoal'), containerPessoal.id])
                 redirect containerPessoal
             }
             '*'{ respond containerPessoal, [status: OK] }
@@ -80,7 +80,7 @@ class ContainerPessoalController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'containerPessoal.label', default: 'ContainerPessoal'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'containerPessoal.label', default: 'ContainerPessoal'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class ContainerPessoalController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'containerPessoal.label', default: 'ContainerPessoal'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'containerPessoal.label', default: 'ContainerPessoal'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

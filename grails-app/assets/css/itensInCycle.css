@@ -1,0 +1,88 @@
+.bordaCycle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    margin-right: -50%;
+    transform: translate(-46%, -44.5%);
+    width: 390px;
+    height: 390px;
+    border-radius: 50%;
+    border-style: solid;
+    background-color: #8fdf82;
+}
+
+.imgCycle {
+    position: absolute;
+    width: 40px;
+    top: 52%;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    margin-right: -50%;
+    transform: translate(-40%, -40%);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border-style: solid;
+}
+
+#cycle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border-color: #8fdf82;
+    list-style-type: none;
+    background: #fffffc;
+}
+
+#cycle .itemCycle {
+    position: absolute;
+    -webkit-transition: all 2s linear;
+    -moz-transition: all 2s linear;
+    transition: all 2s linear;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    border-style: solid;
+    background-color: #00b961;
+    transition: all 300ms;
+}
+
+#cycle .itemCycle:hover {
+    border-color: #8fdf82;
+    width: 50px;
+    height: 50px;
+}
+
+.imgItem {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.nomeItem {
+    width: 400%;
+    border-style: solid;
+    height: auto;
+    text-align: center;
+    margin-left: 110%;
+    padding-left: 50%;
+    max-width: 1200%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 4px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #1aca7a;
+    position: absolute;
+    display: inline;
+    display: none;
+}

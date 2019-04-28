@@ -38,7 +38,7 @@
 }
 
 .header li.appTitle{
-    margin-left: 13%;
+    margin-left: 0%;
 }
 
 .header li a {
@@ -67,6 +67,10 @@
 .header .active {
     background-color: #008B8B;
     color: white;
+}
+
+.mavatar{
+    position: fixed;
 }
 
 

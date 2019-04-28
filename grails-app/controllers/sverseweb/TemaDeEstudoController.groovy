@@ -37,7 +37,7 @@ class TemaDeEstudoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'temaDeEstudo.label', default: 'TemaDeEstudo'), temaDeEstudo.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'temaDeEstudo.label', default: 'TemaDeEstudo'), temaDeEstudo.id])
                 redirect temaDeEstudo
             }
             '*' { respond temaDeEstudo, [status: CREATED] }
@@ -63,7 +63,7 @@ class TemaDeEstudoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'temaDeEstudo.label', default: 'TemaDeEstudo'), temaDeEstudo.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'temaDeEstudo.label', default: 'TemaDeEstudo'), temaDeEstudo.id])
                 redirect temaDeEstudo
             }
             '*'{ respond temaDeEstudo, [status: OK] }
@@ -80,7 +80,7 @@ class TemaDeEstudoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'temaDeEstudo.label', default: 'TemaDeEstudo'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'temaDeEstudo.label', default: 'TemaDeEstudo'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class TemaDeEstudoController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'temaDeEstudo.label', default: 'TemaDeEstudo'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'temaDeEstudo.label', default: 'TemaDeEstudo'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

@@ -37,7 +37,7 @@ class TurmaController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'turma.label', default: 'Turma'), turma.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'turma.label', default: 'Turma'), turma.id])
                 redirect turma
             }
             '*' { respond turma, [status: CREATED] }
@@ -63,7 +63,7 @@ class TurmaController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'turma.label', default: 'Turma'), turma.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'turma.label', default: 'Turma'), turma.id])
                 redirect turma
             }
             '*'{ respond turma, [status: OK] }
@@ -80,7 +80,7 @@ class TurmaController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'turma.label', default: 'Turma'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'turma.label', default: 'Turma'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class TurmaController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'turma.label', default: 'Turma'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'turma.label', default: 'Turma'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

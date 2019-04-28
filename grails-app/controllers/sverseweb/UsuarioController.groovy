@@ -1,103 +1,71 @@
 package sverseweb
 
+
+import seguranca.Permissao
+import seguranca.Usuario
+import seguranca.UsuarioPermissao
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
 class UsuarioController {
 
     UsuarioService usuarioService
+    def springSecurityService;
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond usuarioService.list(params), model:[usuarioCount: usuarioService.count()]
+    def amigos() {
+        String username = springSecurityService.principal.username
+        Usuario usuario = Usuario.findByUsername(username)
+        def lista = usuario.getAmigos()
+        render(view: "/usuario/amigos", model: [usuarios: lista])
+    }
+
+    def muralAcademico() {
+        String username = springSecurityService.principal.username
+        Usuario user = Usuario.findByUsername(username)
+        def posts = []
+        def idUserPost = [:]
+        def idContainerPost = [:]
+        if (Post.findAllByUsuarioId(user.id) != null && Post.findAllByUsuarioId(user.id).size() > 0) {
+            posts = Post.findAllByUsuarioId(user.id)
+        }
+        if (Post.all?.publicoIds.size() > 0) {
+            Post.all.each {
+                it.publicoIds.each { id ->
+                    if (id == user.id) {
+                        posts.add(it)
+                        if (it.usuarioId) {
+                            idUserPost[it.usuarioId] = Usuario.findById(it.usuarioId)
+                        }
+                    }
+                }
+            }
+        }
+        posts.containerId.each {
+            if(it){
+                idContainerPost[it] = Container.findById(it)
+            }
+        }
+
+        render(view: "/usuario/muralAcademico",
+                model: [usuario        : user,
+                        posts          : posts,
+                        idUserPost     : idUserPost,
+                        idContainerPost: idContainerPost])
+    }
+
+    def calendarioAcademico() {
+        String username = springSecurityService.principal.username
+        Usuario usuario = Usuario.findByUsername(username)
+        render(view: "/usuario/calendarioAcademico", model: [usuario: usuario])
     }
 
     def show(Long id) {
         respond usuarioService.get(id)
     }
 
-    def create() {
-        respond new Usuario(params)
-    }
-
-    def save(Usuario usuario) {
-        if (usuario == null) {
-            notFound()
-            return
-        }
-
-        try {
-            usuarioService.save(usuario)
-        } catch (ValidationException e) {
-            respond usuario.errors, view:'create'
-            return
-        }
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuario.id])
-                redirect usuario
-            }
-            '*' { respond usuario, [status: CREATED] }
-        }
-    }
-
     def edit(Long id) {
         respond usuarioService.get(id)
-    }
-
-    def update(Usuario usuario) {
-        if (usuario == null) {
-            notFound()
-            return
-        }
-
-        try {
-            usuarioService.save(usuario)
-        } catch (ValidationException e) {
-            respond usuario.errors, view:'edit'
-            return
-        }
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuario.id])
-                redirect usuario
-            }
-            '*'{ respond usuario, [status: OK] }
-        }
-    }
-
-    def logout(){
-        redirect action:"index", method:"GET"
-    }
-
-    def delete(Long id) {
-        if (id == null) {
-            notFound()
-            return
-        }
-
-        usuarioService.delete(id)
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'usuario.label', default: 'Usuario'), id])
-                redirect action:"index", method:"GET"
-            }
-            '*'{ render status: NO_CONTENT }
-        }
-    }
-
-    protected void notFound() {
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuario.label', default: 'Usuario'), params.id])
-                redirect action: "index", method: "GET"
-            }
-            '*'{ render status: NOT_FOUND }
-        }
     }
 }

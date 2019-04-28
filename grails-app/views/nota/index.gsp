@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'nota.label', default: 'Nota')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
-    </head>
-    <body>
-        <a href="#list-nota" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-            </ul>
-        </div>
-        <div id="list-nota" class="content scaffold-list" role="main">
-            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
-                <div class="message" role="status">${flash.message}</div>
-            </g:if>
-            <f:table collection="${notaList}" />
+<head>
+    <g:set var="entityName" value="${message(code: 'nota.label', default: 'Nota')}"/>
+    <title><g:message code="default.list.label" args="[entityName]"/></title>
 
-            <div class="pagination">
-                <g:paginate total="${notaCount ?: 0}" />
+    <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/desktop-style.css?v=266bb8a6f649">
+    <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/misc-desktop-style.css?v=84527a92ab6d">
+    <asset:link rel="icon" href="faviconSverse.ico" type="image/x-ico"/>
+</head>
+
+<body>
+<div class="container">
+    <div class="columns">
+        <div class="column col-12">
+            <header class="global-header contentNavGlobal">
+                <div class="content community-bg">
+                    <div class="container">
+                        <g:render template="../templates/_navGlobal"/>
+                    </div>
+                </div>
+            </header>
+            <g:render template="../templates/_navHome"/>
+            <div style="text-align: center; margin-right: 0; height: auto;">
+                <g:render template="mainPageNotas"/>
             </div>
         </div>
-    </body>
+    </div>
+</div>
+</body>
 </html>

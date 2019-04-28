@@ -2,17 +2,17 @@ package sverseweb
 
 import grails.gorm.services.Service
 
-@Service(Materia)
+@Service(Sala)
 interface MateriaService {
 
-    Materia get(Serializable id)
+    Sala get(Serializable id)
 
-    List<Materia> list(Map args)
+    List<Sala> list(Map args)
 
     Long count()
 
     void delete(Serializable id)
 
-    Materia save(Materia materia)
+    Sala save(Sala materia)
 
 }

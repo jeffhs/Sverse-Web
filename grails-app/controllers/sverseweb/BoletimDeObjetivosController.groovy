@@ -37,7 +37,7 @@ class BoletimDeObjetivosController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'boletimDeObjetivos.label', default: 'BoletimDeObjetivos'), boletimDeObjetivos.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'boletimDeObjetivos.label', default: 'BoletimDeObjetivos'), boletimDeObjetivos.id])
                 redirect boletimDeObjetivos
             }
             '*' { respond boletimDeObjetivos, [status: CREATED] }
@@ -63,7 +63,7 @@ class BoletimDeObjetivosController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'boletimDeObjetivos.label', default: 'BoletimDeObjetivos'), boletimDeObjetivos.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'boletimDeObjetivos.label', default: 'BoletimDeObjetivos'), boletimDeObjetivos.id])
                 redirect boletimDeObjetivos
             }
             '*'{ respond boletimDeObjetivos, [status: OK] }
@@ -80,7 +80,7 @@ class BoletimDeObjetivosController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'boletimDeObjetivos.label', default: 'BoletimDeObjetivos'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'boletimDeObjetivos.label', default: 'BoletimDeObjetivos'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class BoletimDeObjetivosController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'boletimDeObjetivos.label', default: 'BoletimDeObjetivos'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'boletimDeObjetivos.label', default: 'BoletimDeObjetivos'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

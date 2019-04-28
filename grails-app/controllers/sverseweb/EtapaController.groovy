@@ -37,7 +37,7 @@ class EtapaController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'etapa.label', default: 'Etapa'), etapa.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'etapa.label', default: 'Etapa'), etapa.id])
                 redirect etapa
             }
             '*' { respond etapa, [status: CREATED] }
@@ -63,7 +63,7 @@ class EtapaController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'etapa.label', default: 'Etapa'), etapa.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'etapa.label', default: 'Etapa'), etapa.id])
                 redirect etapa
             }
             '*'{ respond etapa, [status: OK] }
@@ -80,7 +80,7 @@ class EtapaController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'etapa.label', default: 'Etapa'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'etapa.label', default: 'Etapa'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class EtapaController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'etapa.label', default: 'Etapa'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'etapa.label', default: 'Etapa'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

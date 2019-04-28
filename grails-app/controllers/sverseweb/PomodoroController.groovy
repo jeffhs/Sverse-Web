@@ -37,7 +37,7 @@ class PomodoroController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'pomodoro.label', default: 'Pomodoro'), pomodoro.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'pomodoro.label', default: 'Pomodoro'), pomodoro.id])
                 redirect pomodoro
             }
             '*' { respond pomodoro, [status: CREATED] }
@@ -63,7 +63,7 @@ class PomodoroController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'pomodoro.label', default: 'Pomodoro'), pomodoro.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'pomodoro.label', default: 'Pomodoro'), pomodoro.id])
                 redirect pomodoro
             }
             '*'{ respond pomodoro, [status: OK] }
@@ -80,7 +80,7 @@ class PomodoroController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'pomodoro.label', default: 'Pomodoro'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'pomodoro.label', default: 'Pomodoro'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class PomodoroController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'pomodoro.label', default: 'Pomodoro'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'pomodoro.label', default: 'Pomodoro'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

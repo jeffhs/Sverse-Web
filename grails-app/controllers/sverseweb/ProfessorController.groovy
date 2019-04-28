@@ -37,7 +37,7 @@ class ProfessorController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'professor.label', default: 'Professor'), professor.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'professor.label', default: 'Professor'), professor.id])
                 redirect professor
             }
             '*' { respond professor, [status: CREATED] }
@@ -63,7 +63,7 @@ class ProfessorController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'professor.label', default: 'Professor'), professor.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'professor.label', default: 'Professor'), professor.id])
                 redirect professor
             }
             '*'{ respond professor, [status: OK] }
@@ -80,7 +80,7 @@ class ProfessorController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'professor.label', default: 'Professor'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'professor.label', default: 'Professor'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class ProfessorController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'professor.label', default: 'Professor'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'professor.label', default: 'Professor'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

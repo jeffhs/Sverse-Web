@@ -5,13 +5,18 @@ import grails.testing.web.controllers.ControllerUnitTest
 import grails.validation.ValidationException
 import spock.lang.*
 
+import javax.xml.crypto.Data
+
 class EtapaControllerSpec extends Specification implements ControllerUnitTest<EtapaController>, DomainUnitTest<Etapa> {
 
     def populateValidParams(params) {
         assert params != null
 
         // TODO: Populate valid properties like...
-        //params["name"] = 'someValidName'
+        params["titulo"] = 'Etapa1'
+        params["descricao"] = 'Essa é a nossa Primeira Etapa'
+        params["estado"] = 'Em Andamento'
+        params["dataTerminio"] = Calendar.getInstance().getTime();
         assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
     }
 

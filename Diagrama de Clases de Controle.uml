@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>sverseweb</OriginalElement>
+  <nodes>
+    <node x="1436.0" y="0.0">sverseweb.TopicoDeEstudoController</node>
+    <node x="2154.0" y="0.0">sverseweb.TrabalhoEmGrupoController</node>
+    <node x="2872.0" y="0.0">sverseweb.TemaDeEstudoController</node>
+    <node x="3590.0" y="0.0">sverseweb.CicloDeEstudoController</node>
+    <node x="4308.0" y="0.0">sverseweb.LixeiraController</node>
+    <node x="0.0" y="0.0">sverseweb.PaginadorController</node>
+    <node x="5026.0" y="0.0">sverseweb.BoletimDeEtapasController</node>
+    <node x="5744.0" y="0.0">sverseweb.MetaController</node>
+    <node x="6462.0" y="0.0">sverseweb.AlarmeController</node>
+    <node x="7180.0" y="0.0">sverseweb.MateriaController</node>
+    <node x="0.0" y="2804.0">sverseweb.NotaController</node>
+    <node x="718.0" y="2804.0">sverseweb.ItemLixeiraController</node>
+    <node x="1436.0" y="2804.0">sverseweb.ItemEnvioController</node>
+    <node x="2154.0" y="2804.0">sverseweb.ContainerPessoalController</node>
+    <node x="2872.0" y="2804.0">sverseweb.TurmaController</node>
+    <node x="3590.0" y="2804.0">sverseweb.EstudoController</node>
+    <node x="4308.0" y="2804.0">sverseweb.BoletimDeObjetivosController</node>
+    <node x="5026.0" y="2804.0">sverseweb.ProfessorController</node>
+    <node x="5744.0" y="2804.0">sverseweb.ContainerController</node>
+    <node x="6462.0" y="2804.0">sverseweb.GrupoDeEstudoController</node>
+    <node x="7180.0" y="2804.0">sverseweb.PerfilController</node>
+    <node x="0.0" y="5432.0">sverseweb.BoletimDeEstudoController</node>
+    <node x="718.0" y="5432.0">sverseweb.PomodoroController</node>
+    <node x="1436.0" y="5432.0">sverseweb.ObjetivoController</node>
+    <node x="2154.0" y="5432.0">sverseweb.EnvioController</node>
+    <node x="2872.0" y="5432.0">sverseweb.EtapaController</node>
+    <node x="718.0" y="0.0">sverseweb.UsuarioController</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.7245398773006134" x="660.4318374259103" y="457.5444538526673" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

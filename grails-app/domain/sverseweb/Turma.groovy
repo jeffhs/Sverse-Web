@@ -1,9 +1,11 @@
 package sverseweb
 
-class Turma {
-    String codTurma
+class Turma extends Container{
+    String codSala
+
+    static hasMany = [salas : Sala]
     
     static constraints = {
-        codTurma(nullable: false, blank: false,        maxSize: 100, unique:false)
+        codSala(nullable: false, blank: false,        maxSize: 100, unique:false)
     }
 }

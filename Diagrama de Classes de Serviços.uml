@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>sverseweb</OriginalElement>
+  <nodes>
+    <node x="699.0" y="0.0">sverseweb.BoletimDeEstudoService</node>
+    <node x="731.0" y="740.0">sverseweb.NotaService</node>
+    <node x="875.0" y="370.0">sverseweb.ItemLixeiraService</node>
+    <node x="0.0" y="555.0">sverseweb.PomodoroService</node>
+    <node x="769.0" y="555.0">sverseweb.ContainerService</node>
+    <node x="247.0" y="740.0">sverseweb.MateriaService</node>
+    <node x="259.0" y="555.0">sverseweb.PaginadorService</node>
+    <node x="360.0" y="0.0">sverseweb.TrabalhoEmGrupoService</node>
+    <node x="0.0" y="0.0">sverseweb.BoletimDeObjetivosService</node>
+    <node x="0.0" y="740.0">sverseweb.ObjetivoService</node>
+    <node x="656.0" y="185.0">sverseweb.TopicoDeEstudoService</node>
+    <node x="515.0" y="555.0">sverseweb.ItemEnvioService</node>
+    <node x="0.0" y="185.0">sverseweb.BoletimDeEtapasService</node>
+    <node x="330.0" y="185.0">sverseweb.ContainerPessoalService</node>
+    <node x="489.0" y="740.0">sverseweb.UsuarioService</node>
+    <node x="0.0" y="370.0">sverseweb.TemaDeEstudoService</node>
+    <node x="972.0" y="740.0">sverseweb.TurmaService</node>
+    <node x="0.0" y="925.0">sverseweb.EtapaService</node>
+    <node x="241.0" y="925.0">sverseweb.AlarmeService</node>
+    <node x="482.0" y="925.0">sverseweb.EnvioService</node>
+    <node x="607.0" y="370.0">sverseweb.NotificacaoService</node>
+    <node x="977.0" y="185.0">sverseweb.GrupoDeEstudoService</node>
+    <node x="723.0" y="925.0">sverseweb.EstudoService</node>
+    <node x="964.0" y="925.0">sverseweb.PerfilService</node>
+    <node x="0.0" y="1110.0">sverseweb.MetaService</node>
+    <node x="1022.0" y="555.0">sverseweb.ProfessorService</node>
+    <node x="241.0" y="1110.0">sverseweb.LixeiraService</node>
+    <node x="307.0" y="370.0">sverseweb.CicloDeEstudoService</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.8245398773006134" x="608.6465773809525" y="399.62797619047626" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

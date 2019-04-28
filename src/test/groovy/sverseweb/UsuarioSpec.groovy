@@ -1,6 +1,7 @@
 package sverseweb
 
 import grails.testing.gorm.DomainUnitTest
+import seguranca.Usuario
 import spock.lang.Specification
 
 class UsuarioSpec extends Specification implements DomainUnitTest<Usuario> {

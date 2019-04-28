@@ -37,7 +37,7 @@ class MetaController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'meta.label', default: 'Meta'), meta.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'meta.label', default: 'Meta'), meta.id])
                 redirect meta
             }
             '*' { respond meta, [status: CREATED] }
@@ -63,7 +63,7 @@ class MetaController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'meta.label', default: 'Meta'), meta.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'meta.label', default: 'Meta'), meta.id])
                 redirect meta
             }
             '*'{ respond meta, [status: OK] }
@@ -80,7 +80,7 @@ class MetaController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'meta.label', default: 'Meta'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'meta.label', default: 'Meta'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class MetaController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'meta.label', default: 'Meta'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'meta.label', default: 'Meta'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

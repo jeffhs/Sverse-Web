@@ -1,23 +1,25 @@
 package sverseweb
 
+import seguranca.Usuario
+
 class Nota{
-    Integer nota
     String titulo
     String texto
-    Integer nCor
-    Integer nEmoji
+    String nCor
+    String nEmoji
     String tag
     Date dataCriacao
     Date dataAtualizacao
 
+    static belongsTo = [usuario : Usuario]
+
     static constraints = {
-        nota(nullable: false, blank: false,        maxSize: 100, unique:false)
-        titulo(nullable: false, blank: false,        maxSize: 100, unique:false)
-        texto(nullable: false, blank: false,        maxSize: 100, unique:false)
-        nCor(nullable: false, blank: false,        maxSize: 100, unique:false)
-        nEmoji(nullable: false, blank: false,        maxoSize: 100, unique:false)
-        tag(nullable: false, blank: false,        maxoSize: 100, unique:false)
-        dataCriacao(nullable: false, blank: false,        maxoSize: 100, unique:false)
-        dataAtualizacao(nullable: false, blank: false,        maxSize: 100, unique:false)
+        titulo(nullable: true, blank: true, maxSize: 100, unique:false)
+        texto(nullable: false, maxSize: 2888, blank: false, unique:false)
+        nCor(nullable: true, blank: true, maxSize: 100, unique:false, default: "Aleatória", inList: ["Azul","Verde","Vermelho","Amarelo","Branco","Preto"])
+        nEmoji(nullable: true, blank: true, maxoSize: 100, unique:false)
+        tag(nullable: true, blank: true, maxoSize: 100, unique:false)
+        dataCriacao(nullable: false, blank: false, maxoSize: 100, unique:false)
+        dataAtualizacao(nullable: false, blank: false, maxSize: 100, unique:false)
     }
 }

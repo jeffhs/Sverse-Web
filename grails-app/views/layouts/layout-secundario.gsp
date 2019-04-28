@@ -14,7 +14,11 @@
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'spectre-exp.min.css')}" type="text/css">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'spectre-icons.min.css')}" type="text/css">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'font-awesome.css')}" type="text/css">
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'header.css')}" type="text/css">
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
+
     <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
+
 
     <g:layoutHead/>
 </head>
@@ -30,6 +34,6 @@
     <asset:javascript src="jquery-1.9.1.min.js"/>
     <asset:javascript src="jquery-ui-1.10.1.custom.min.js"/>
     <asset:javascript src="jquery.dataTables.js"/>
-
+    <asset:javascript src="navegador.js"/>
 </body>
 </html>

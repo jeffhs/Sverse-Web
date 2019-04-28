@@ -3,6 +3,7 @@ package sverseweb
 import grails.testing.gorm.DomainUnitTest
 import grails.testing.web.controllers.ControllerUnitTest
 import grails.validation.ValidationException
+import seguranca.Usuario
 import spock.lang.*
 
 class UsuarioControllerSpec extends Specification implements ControllerUnitTest<UsuarioController>, DomainUnitTest<Usuario> {
